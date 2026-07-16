@@ -18,8 +18,13 @@ public:
         }
         sort(prefixGcd.begin(), prefixGcd.end());
         long long ans = 0;
-        for (int i = 0; i < n / 2; i++) {
-            ans += gcd(prefixGcd[i], prefixGcd[n - 1 - i]);
+        int i=0;
+        int j=n-1;
+        while(i<j){
+            ans+=gcd(prefixGcd[i],prefixGcd[j]);
+            i++;
+            j--;
+            if(i==j) break;
         }
         return ans;
     }
